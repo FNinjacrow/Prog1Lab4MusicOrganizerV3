@@ -12,7 +12,12 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+    
+    /**
+     * private ArrayList<Tracks> track;
+     * track = new ArrayList<>();
+     */
+    
     /**
      * Create a MusicOrganizer
      */
@@ -131,4 +136,64 @@ public class MusicOrganizer
         }
         return valid;
     }
+    
+    public void listMatching(String searchString)
+    {
+        for(String artist : files) {
+            if(artist.contains(searchString)) {
+            System.out.println(artist);
+            player.playSample(artist);
+            System.out.println(files);
+            }
+        }
+    }
+    
+    // Question 30 Answer
+    public void multiplesOfFive()
+    {
+        int value = 10;
+        while(value < 90) {
+            value = value + 5;
+            System.out.println(value);
+        }
+    }
+    
+    //Question 31
+    public void sum1To10()
+    {
+        int number1 = 1;
+        int number2 = 1;
+        int total = 0;
+        while(!(total > 20)) {
+            total = number1 + number2;
+            System.out.println(number1 + "+" + number2 + "=" + total);
+            number1 = number1 + 1;
+            total = number1 + number2;
+            System.out.println(number1 + "+" + number2 + "=" + total);
+            number2 = number2 + 1;
+        }
+    }
+    
+    // Question 32 Answer
+    public void sum(int a, int b)
+    {
+        int total = 0;
+        while(total == 0) {
+            total = a + b;
+            System.out.println(total);
+        }
+    }
+    
+    public boolean isPrime(int n) {
+    if (n > 1) {
+        while(n > 2) {   
+        if (n % 2 == 0) {
+        return false;
+    }
+        return true;
+    }
+        return true;
+    }
+        return false;
+    }   
 }
